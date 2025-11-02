@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="Gioco"
-run/main_scene="res://node_3d.tscn"
+run/main_scene="res://scenes/main-scene.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
