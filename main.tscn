@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwtcm60pg1gi4"]
+
+[ext_resource type="Material" uid="uid://ci3x1ncirwtax" path="res://materials/metal.tres" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://d3fs15bxm7mk4" path="res://models/building/wall.glb" id="4_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bh08fw4yht016" path="res://scenes/wall_doorway.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://7rfuu1jpy2go" path="res://scenes/pillar.tscn" id="6_272bh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.89955777, -0.26348236, 0.34838614, 0, 0.79758394, 0.603208, -0.43680185, 0.5426204, -0.71747285, 0, 0, 0)
+light_color = Color(1, 0.8862745, 0.8156863, 1)
+shadow_enabled = true
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.800001)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
+transform = Transform3D(-6.39988e-07, 0, -20.690012, 0, 1, 0, 14.641218, 0, -9.043891e-07, -0.13206097, 0, 12.993709)
+material = ExtResource("1_lquwl")
+
+[node name="ProtoController" parent="." instance=ExtResource("2_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1000001, 1.1, 10)
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+
+[node name="CSGCombiner3D4" type="CSGCombiner3D" parent="."]
+
+[node name="wall2" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, 0.5, 9.685755e-08)
+
+[node name="wall3" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000002, 0.5, 9.685755e-08)
+
+[node name="wall4" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7000003, 0.5, 9.685755e-08)
+
+[node name="wall5" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.700001, 0.5, 9.685755e-08)
+
+[node name="wall16" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3, 0.5, 21)
+
+[node name="wall17" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3000002, 0.5, 21)
+
+[node name="wall20" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6999998, 0.5, 21)
+
+[node name="wall18" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7000003, 0.5, 21)
+
+[node name="wall19" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.700001, 0.5, 21)
+
+[node name="wall6" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, -13.200001, 0.5, 2.5)
+
+[node name="wall7" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, -13.200001, 0.5, 6.5)
+
+[node name="wall8" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, -13.200001, 0.5, 10.5)
+
+[node name="wall9" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, -13.200001, 0.5, 14.5)
+
+[node name="wall10" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, -13.200001, 0.5, 18.5)
+
+[node name="wall11" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 7.8999996, 0.5, 2.5)
+
+[node name="wall12" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 7.8999996, 0.5, 6.5)
+
+[node name="wall13" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 7.8999996, 0.5, 10.5)
+
+[node name="wall14" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 7.8999996, 0.5, 14.5)
+
+[node name="wall15" parent="CSGCombiner3D4" instance=ExtResource("4_5vw27")]
+transform = Transform3D(7.4505806e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 7.4505806e-08, 7.8999996, 0.5, 18.5)
+
+[node name="wall_doorway2" parent="CSGCombiner3D4" instance=ExtResource("6_7mycd")]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -2.6999989, 0.5, 0)
+
+[node name="pillar2" parent="CSGCombiner3D4" instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2, 0.5, 8.940697e-08)
+
+[node name="pillar3" parent="CSGCombiner3D4" instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9000006, 0.5, 8.940697e-08)
+
+[node name="pillar4" parent="CSGCombiner3D4" instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2, 0.5, 21.1)
+
+[node name="pillar5" parent="CSGCombiner3D4" instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9000006, 0.5, 21.1)

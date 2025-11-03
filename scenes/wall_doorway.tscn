@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh08fw4yht016"]
+
+[ext_resource type="PackedScene" uid="uid://dne5kky6gilil" path="res://models/building/wall_doorway.glb" id="1_vvqjt"]
+
+[node name="wall_doorway2" instance=ExtResource("1_vvqjt")]
+
+[node name="wall_doorway_door" parent="wall_doorway" index="0"]
+transform = Transform3D(0.34202003, 0, 0.93969244, 0, 1, 0, -0.93969244, 0, 0.34202003, -0.8200989, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00064086914, 2.003169, 0)
+visible = false
+operation = 2
+use_collision = true
+size = Vector3(4, 4, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00064086914, -0.62402844, 0)
+operation = 2
+use_collision = true
+size = Vector3(1.9956665, 2.7456055, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="2"]
+transform = Transform3D(0.16154917, 0, 0.37869275, 0, 0.68, 0, -0.44385272, 0, 0.1378329, -0.50064087, 1.403169, -0.8)
+visible = false
+operation = 2
+use_collision = true
+size = Vector3(4, 4, 1)
