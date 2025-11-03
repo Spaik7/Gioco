@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh08fw4yht016"]
+[gd_scene load_steps=5 format=3 uid="uid://bh08fw4yht016"]
 
 [ext_resource type="PackedScene" uid="uid://dne5kky6gilil" path="res://models/building/wall_doorway.glb" id="1_vvqjt"]
+[ext_resource type="Texture2D" uid="uid://dp0b7ubfmswjt" path="res://models/dungeon_albedo.png" id="2_787ka"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0hut1"]
+albedo_texture = ExtResource("2_787ka")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3sf2o"]
+albedo_texture = ExtResource("2_787ka")
 
 [node name="wall_doorway2" instance=ExtResource("1_vvqjt")]
 
+[node name="wall_doorway" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_0hut1")
+
 [node name="wall_doorway_door" parent="wall_doorway" index="0"]
 transform = Transform3D(0.34202003, 0, 0.93969244, 0, 1, 0, -0.93969244, 0, 0.34202003, -0.8200989, 0, 0)
+material_override = SubResource("StandardMaterial3D_3sf2o")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00064086914, 2.003169, 0)

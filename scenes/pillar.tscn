@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://7rfuu1jpy2go"]
+[gd_scene load_steps=4 format=3 uid="uid://7rfuu1jpy2go"]
 
 [ext_resource type="PackedScene" uid="uid://or04rl64cvul" path="res://models/building/pillar.glb" id="1_fv82l"]
+[ext_resource type="Texture2D" uid="uid://dp0b7ubfmswjt" path="res://models/dungeon_albedo.png" id="2_01pxi"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_01pxi"]
-height = 4.05
-radius = 0.8
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1crh"]
+albedo_texture = ExtResource("2_01pxi")
 
 [node name="pillar2" instance=ExtResource("1_fv82l")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.025, 0)
-shape = SubResource("CylinderShape3D_01pxi")
+[node name="pillar" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_q1crh")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.004467, 0)
+visible = false
+use_collision = true
+radius = 0.7480469
+height = 3.996582

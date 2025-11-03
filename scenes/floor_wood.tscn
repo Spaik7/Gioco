@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvug2act5a2xe"]
+[gd_scene load_steps=4 format=3 uid="uid://bvug2act5a2xe"]
 
 [ext_resource type="PackedScene" uid="uid://b5op0fk381m74" path="res://models/building/floor_wood.glb" id="1_i0wpl"]
+[ext_resource type="Texture2D" uid="uid://dp0b7ubfmswjt" path="res://models/dungeon_albedo.png" id="2_ouc7c"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vh08i"]
+albedo_texture = ExtResource("2_ouc7c")
 
-[node name="floor_wood" parent="." instance=ExtResource("1_i0wpl")]
+[node name="floor_wood" instance=ExtResource("1_i0wpl")]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.019433593, 0)
+[node name="floor_wood_large_dark" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_vh08i")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026013188, 0)
 visible = false
 use_collision = true
-size = Vector3(4, 0.13886718, 4)
+size = Vector3(4, 0.14797363, 4)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://jakje6xfi6mi"]
+
+[ext_resource type="PackedScene" uid="uid://d3fs15bxm7mk4" path="res://models/building/wall.glb" id="1_jvatq"]
+
+[node name="wall2" instance=ExtResource("1_jvatq")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9918616, 0)
+size = Vector3(4, 4, 1)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGBox3D" index="0"]
+transform = Transform3D(2.8799999, 0, 0, 0, -4.3711392e-08, -2.8000002, 0, 1.0000001, -1.223919e-07, 0, 0, 0)
+operation = 2
+sides = 16
