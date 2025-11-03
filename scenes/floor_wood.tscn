@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvug2act5a2xe"]
+
+[ext_resource type="PackedScene" uid="uid://b5op0fk381m74" path="res://models/building/floor_wood.glb" id="1_i0wpl"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="floor_wood" parent="." instance=ExtResource("1_i0wpl")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.019433593, 0)
+visible = false
+use_collision = true
+size = Vector3(4, 0.13886718, 4)
